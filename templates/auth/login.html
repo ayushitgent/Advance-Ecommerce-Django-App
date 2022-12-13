@@ -1,0 +1,44 @@
+{% extends "./baseauth.html" %}
+
+{% block title %}
+Login Page
+{% endblock title %}
+
+{% block formContent %}
+<div class="card bg-light p-4">
+  <h2 class="text-dark"> Login </h2>
+  <form action="/authcart/login/" method="POST"> 
+    {% csrf_token %}
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+      {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="pass1">Password</label>
+      <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Password" required>
+    </div>
+    <div class="form-group">
+      <label for="pass2">Password</label>
+      <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Password" required>
+    </div>
+    <div>
+      <br>
+        <button type="submit" class="btn btn-primary">SignIn</button>  
+     </div>
+     <div>
+      <br>
+         Not a User? <a href="/authcart/signup/">Create Account</a>
+     </div>
+  </form>  
+ </div>
+{% endblock formContent %}
+
+
+{% block body %}
+{% endblock body %}
