@@ -2,10 +2,14 @@
 {% block title %}
 SignUp Page
 {% endblock title %}
+{% block navheader %}
+     <li><a href="/authcart/login">Login</a></li>     
+{% endblock navheader %}
+
 
 {% block formContent %}
 
-<div class="card bg-light p-4">
+<div class="card bg-light p-2 ">
   <h2 class="text-dark"> SignUp </h2>
   <form action="/authcart/signup/" method="post"> 
     {% csrf_token %}
@@ -32,7 +36,6 @@ SignUp Page
         <button type="submit" class="btn btn-primary">SignUp</button>  
      </div>
      <div>
-      <br>
         Already a User? <a href="/authcart/login/">Login</a>
      </div> 
   </form>

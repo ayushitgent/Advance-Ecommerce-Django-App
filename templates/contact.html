@@ -1,10 +1,62 @@
 {% extends 'base.html' %}
 {% block title %}Contact{% endblock title %}
 {% block body %}
-  <div class="card">
-    <br>
-    <br>
-  <p>This is Contact Page</p>
-  </div>
+
+{% comment %} <h1 class="text-centre">Contact Us</h1> {% endcomment %}
+
+
+<div class="row">
+  <br>
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <div class="container mt-2">
+    <div class="card bg-light p-4">
+      <h2 class="text-dark">Contact Us</h2>
+      <form action="/contact" method="POST"> 
+        {% csrf_token %}
+        {% for message in messages %}
+        <div
+          class="alert alert-{{message.tags}} alert-dismissible fade show"
+          role="alert"
+        >
+          {{ message }}
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
+        {% endfor %}      
+        <div class="form-group">
+          <label for="name">First Name</label>
+          <input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Last Name</label>
+          <input type="text" class="form-control" id="lname" placeholder="Enter Last Name" name="lname" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email" value="{{ user.username }}"" required>
+        </div>
+        <div class="form-group">
+          <label for="email">How Can I Help You ?</label>
+          <textarea type="text" class="form-control" id="desc" name="desc" placeholder="Feel Free to Query Us" required></textarea>
+        </div>  
+        <div class="form-group">
+          <label for="number">Phone Number</label>
+          <input type="number" class="form-control" id="number" name="number" placeholder="Enter Phone Number" required>
+        </div>  
+        <div>
+          <br>
+            <button type="submit" class="btn btn-primary">Submit</button>  
+        </div>
+      </form>  
+      </div>
+    </div>
+  <div class="col-md-4"></div>  
+  <br>
+</div>
 
 {% endblock body %}

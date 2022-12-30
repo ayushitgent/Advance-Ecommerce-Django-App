@@ -120,8 +120,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com' #'smtpout.secureserver.net'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = "21f1001030@student.onlinedegree.iitm.ac.in"
-EMAIL_HOST_PASSWORD = 'gauvigqsnliwyfbw'#password associated with above email-id
+EMAIL_HOST_USER = "iayushguptastudent@gmail.com"
+EMAIL_HOST_PASSWORD = 'atqqftkjquhdunhp'#password associated with above email-id
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
@@ -133,6 +133,9 @@ import os
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"static")
 ]
+MEDIA_URL ='/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR,"media")
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MESSAGE_TAGS = {
     messages.ERROR:'danger',
