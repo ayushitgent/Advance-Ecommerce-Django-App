@@ -121,7 +121,7 @@ EMAIL_HOST = 'smtp.gmail.com' #'smtpout.secureserver.net'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "iayushguptastudent@gmail.com"
-EMAIL_HOST_PASSWORD = 'atqqftkjquhdunhp'#password associated with above email-id
+EMAIL_HOST_PASSWORD = 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
